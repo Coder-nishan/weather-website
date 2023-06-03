@@ -4,6 +4,7 @@ const hbs= require("hbs");
 const weather = require("./utils/weather");
 
 const app= express();
+const port = process.env.PORT || 3000;
 
 // Define path for express config
 const publicDirectoryName = path.join(__dirname,"../public");
@@ -87,6 +88,6 @@ app.get('*', (req, res) => {
         body: "Page not found"
     })
 })
-app.listen(3000, () => {
-    console.log("Listing at port 3000 at your local machine");
+app.listen(port, () => {
+    console.log("Listing at port" + port);
 })
